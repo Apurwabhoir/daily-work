@@ -1,37 +1,17 @@
 import java.util.Scanner;
-
-/*WAP to accept Student name , Marks of 5 subject, calculate the Percentage and display the grade*/
 public class Student_info
 {
+	public static void main(String[] args)
+	{
+		acceptName();
+		accept_Marks();
 
-	public static void main(String[] args) 
-	{
-		Student_info obj=new Student_info();
-		int[] mark=obj.acceptMarks();
-		obj.Percentage(mark);
-		obj.acceptName();
 	}
-	
-	public int[] acceptMarks()
+	public static String[] acceptName()
 	{
 		Scanner sc=new Scanner(System.in);
 		int size,i;
-		System.out.println("\nEnter the size");
-		size=sc.nextInt();
-		int mark[]=new int[size];
-		System.out.println("Enter " +size+ "Marks:");
-		for(i=0;i<size;i++)
-		{
-			mark[i]=sc.nextInt();
-		}
-		return mark;
-	}
-	
-	public String[] acceptName()
-	{
-		Scanner sc=new Scanner(System.in);
-		int size,i;
-		System.out.println("\nEnter the size");
+		System.out.println("Enter the size");
 		size=sc.nextInt();
 		String[] name=new String[size];
 		System.out.println("Enter "+size+" Names:");
@@ -47,23 +27,37 @@ public class Student_info
 		return name;
 	}
 	
-	public void Percentage(int[] mark)
+	public static void accept_Marks()
 	{
-		//int[] mark=acceptMarks();
-		int score = mark[0];
-		int total=500;
-		float percentage;
 
-		for (int i = 0; i < mark.length; i++) 
-		{  
-			score = score + mark[i];  
-	    }  
-		System.out.println("Total Score of Marks: " +score);
+		Scanner sc = new Scanner(System.in);
+		int mark;    
+		float percentage;
+		System.out.println("Enter the total subjects ");
+		mark=sc.nextInt();
+   
+    
+		int arr[] = new int[mark];
+		System.out.println("Enter the marks secured in each subject ");
+		for(int i=0;i<mark;i++)  
+		{
+			arr[i]=sc.nextInt();
+		}
+   
+		int score=0;
 		
-		percentage=(score*100)/total;
-		
-		System.out.println("Percentage is : " +percentage);
-		
+		//Calculate the total marks
+		for(int i=0;i<mark;i++)
+		{
+			score=score+arr[i];
+		}
+		System.out.println("The total marks obtained is "+score);
+    
+		//calculate percentage 
+		percentage = (score / (float)mark);
+		System.out.println( "Total Percentage : " + percentage + "%");
+    
+		//find out Grade
 		System.out.print("The student Grade is: ");
 		if(percentage>=90)
         {
@@ -87,5 +81,4 @@ public class Student_info
         }
 		
 	}
-
 }
