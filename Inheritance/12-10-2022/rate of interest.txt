@@ -1,0 +1,92 @@
+//WAP to calculate the rate of interest of different bank by using Multiple inheritance.
+
+package multiple;
+public interface Sbi 
+{
+	double sbi_si=2.75;
+	public void sbiRateInter();	
+}
+
+package multiple;
+public interface IcIcibank 
+{
+	double icici_si=4.56;
+	public void iciciRateInter();	
+}
+
+package multiple;
+public interface Axis 
+{
+	double axis_si=6.3;
+	public void axisRateInter();
+}
+
+package multiple;
+import java.util.Scanner;
+public class Calculate_Rate implements Sbi,IcIcibank,Axis
+{
+
+	public static void main(String[] args) 
+	{
+		Calculate_Rate ob=new Calculate_Rate();
+		ob.axisRateInter();
+		ob.iciciRateInter();
+		ob.sbiRateInter();
+	}
+
+	@Override
+	public void sbiRateInter()
+	{
+		double pri,year,sri;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("\nSBI Rate of Interest");
+		System.out.println("\nEnter The Principal : ");
+		pri=sc.nextDouble();
+		
+		System.out.println("\nEnter The Year : ");
+		year=sc.nextDouble();
+		
+		//calculate Rate of interest
+		
+		sri=(sbi_si*100)/(pri*year);
+		System.out.println("\nThe SBI Bank Rate of Interest is:"+sri);
+		
+	}
+
+	@Override
+	public void axisRateInter() 
+	{
+		Double pri,year,ari;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("\nAxis Bank Rate of Interest");
+		System.out.println("\nEnter The Principal : ");
+		pri=sc.nextDouble();
+		
+		System.out.println("\nEnter The Year : ");
+		year=sc.nextDouble();
+		
+		//calculate Rate of interest
+		
+		ari=(axis_si*100)/(pri*year);
+		System.out.println("\nThe Axis Bank Rate of Interest is:"+ari);
+	}
+
+	@Override
+	public void iciciRateInter() 
+	{
+		double pri,year,iri;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("\nIcici Bank Rate of Interest");
+		System.out.println("\nEnter The Principal : ");
+		pri=sc.nextDouble();
+		
+		System.out.println("\nEnter The Year : ");
+		year=sc.nextDouble();
+		
+		//calculate Rate of interest
+		
+		iri=(icici_si*100)/(pri*year);
+		System.out.println("\nThe Icici Bank Rate of Interest is:"+iri);
+		
+	}
+}
