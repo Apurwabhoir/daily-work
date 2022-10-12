@@ -1,0 +1,131 @@
+/*Interface:
+WAP to convert the currency by using interface.*/
+
+package multiple;
+
+public interface convert 
+{
+	public void currency();
+}
+
+//Dollars
+package multiple;
+
+import java.util.Scanner;
+
+public class Dollars implements convert
+{
+
+	public static void main(String[] args)
+	{
+		Dollars ob = new Dollars();
+		ob.currency();
+	}
+
+	@Override
+	public void currency() 
+	{
+		double rs,dollar;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("\nEnter The Rupees : ");
+		rs=sc.nextDouble();
+		
+		//calculate rupees to dollars
+		dollar=rs/82.27;
+		System.out.println("\nThe converted value of Dollars is:"+dollar+"$");
+	}
+}
+
+//Pounds
+package multiple;
+
+import java.util.Scanner;
+
+public class Pounds implements convert
+{
+
+	public static void main(String[] args)
+	{
+		Pounds ob = new Pounds();
+		ob.currency();
+	}
+
+	@Override
+	public void currency()
+	{
+		double rs,pounds;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("\nEnter The Rupees : ");
+		rs=sc.nextDouble();
+		
+		//calculate rupees to Pounds
+		pounds=rs/90.80;
+		System.out.println("\nThe converted value of Pounds is:"+pounds);
+		
+	}
+
+}
+
+//Euro
+package multiple;
+
+import java.util.Scanner;
+
+public class Euro implements convert
+{
+
+	public static void main(String[] args)
+	{
+		Euro ob = new Euro();
+		ob.currency();
+
+	}
+
+	@Override
+	public void currency() 
+	{
+		double rs,euro;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("\nEnter The Rupees : ");
+		rs=sc.nextDouble();
+		
+		//calculate rupees to Euro
+		euro=rs/79.67;
+		System.out.println("\nThe converted value of Euros is:"+euro);
+		
+	}
+
+}
+
+//Dirham
+package multiple;
+
+import java.util.Scanner;
+
+public class Dirham implements convert
+{
+
+	public static void main(String[] args) 
+	{
+		Dirham ob = new Dirham();
+		ob.currency();
+
+	}
+
+	@Override
+	public void currency() 
+	{
+		double rs,dirham;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("\nEnter The Rupees : ");
+		rs=sc.nextDouble();
+		
+		//calculate rupees to Euro
+		dirham=rs/22.39;
+		System.out.println("\nThe converted value of Dirham is:"+dirham);
+		
+	}
+
+}
+
+
