@@ -1,0 +1,111 @@
+/*WAP to accept bank name
+user name
+user password
+process:credi/ Debit
+process will be depend upon the user
+after that display the details with final balance amount*/
+package encapsulation;
+
+public class BankPro 
+{
+	private int pass=999;
+	private int ac_bal=500;
+	private int debit;
+
+	public int getPass() {
+		return pass;
+	}
+
+	public void setPass(int abc) {
+		this.pass = abc;
+	}
+
+	public int getAc_cre() {
+		return ac_bal;
+	}
+	
+	public void setAc_cre(int new_val) 
+	{
+		this.ac_bal += new_val;
+	}
+	
+	public int getAc_debit() {
+		return ac_bal;
+	}
+	
+	public void setAc_debit(int new_val) 
+	{
+		this.ac_bal -= new_val;
+	}
+	
+}
+
+package encapsulation;
+
+import java.util.Scanner;
+
+public class UserPro extends BankPro
+{	
+	
+		public static void main(String[] args) 
+		{
+			UserPro ob=new UserPro();
+			ob.process();
+			
+		}
+	
+		public void process()
+		{
+			char ans;
+			String u_id,bname ;
+			int u_pass,u_cre,u_deb,ch,balance=0;
+			BankPro obj=new BankPro();
+			Scanner sc=new Scanner(System.in);
+			
+			System.out.println("Enter Bank name ");
+			bname = sc.next();
+			System.out.println("Enter User name ");
+			u_id=sc.next();
+			System.out.println("Enter Account Pass");
+			u_pass=sc.nextInt();
+			obj.getPass();
+			if(obj.getPass()==u_pass)
+			{
+				do
+				{
+					System.out.println("what do you want to do\n 1: Credit \n 2: Debit");
+					ch=sc.nextInt();
+					switch (ch)
+					{
+					
+					case 1:
+						System.out.println("Enter Amount you want to Credit");
+						balance=sc.nextInt();
+						obj.setAc_cre(balance);
+						System.out.println("The Username is "+u_id);
+						System.out.println("The Bankname is "+bname);
+						System.out.println("The Account balance is Rs."+obj.getAc_cre());
+						break;
+					case 2:
+						System.out.println("Enter Amount you want to Debit");
+						balance=sc.nextInt();
+						obj.setAc_debit(balance);
+						obj.getAc_debit();
+						System.out.println("The Username is "+u_id);
+						System.out.println("The Bankname is "+bname);
+						System.out.println("The Account balance is Rs."+obj.getAc_debit());
+						break;
+					}
+				
+				
+				System.out.println("Do you want to continue y/n");
+				ans=sc.next().charAt(0);
+			}
+			while(ans=='Y'||ans=='y');
+		}
+			else 
+			System.out.println("Your Entered Password is wrong try again please");	
+			
+		}
+
+}
