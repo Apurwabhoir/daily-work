@@ -1,0 +1,38 @@
+/*WAP to to do the following process by using abstract class:
+
+1 abstract class:(Gross, total ,Net)
+
+Diff class : which will display the Employee detilas and Final Salary in hand amount .*/
+package abstraction;
+
+import java.util.Scanner;
+
+public abstract class CalSalary extends Display
+{	
+	public static void calc()
+	{
+		Scanner sc =new Scanner(System.in);
+		int gross,tot,net;
+	
+		System.out.println("enter the gross salary of employee:");
+		gross =sc.nextInt();
+		System.out.println("enter the total deduction of employee:");
+		tot =sc.nextInt();
+		net = gross - tot;
+		System.out.println("the total net-wroth of employee:"+net);
+		
+	}
+}
+
+package abstraction;
+
+public class Disp extends CalSalary
+{
+
+	public static void main(String[] args)
+	{
+		Disp ob=new Disp();
+		ob.calc();
+		ob.print();
+	}
+}
