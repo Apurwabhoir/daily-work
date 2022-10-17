@@ -14,15 +14,16 @@ public abstract class CalSalary extends Display
 		Scanner sc =new Scanner(System.in);
 		int gross,tot,net;
 	
-		System.out.println("enter the gross salary of employee:");
+		System.out.println("Enter The Gross salary :");
 		gross =sc.nextInt();
-		System.out.println("enter the total deduction of employee:");
+		System.out.println("Enter The Total Deduction:");
 		tot =sc.nextInt();
 		net = gross - tot;
-		System.out.println("the total net-wroth of employee:"+net);
+		System.out.println("the total Net-wroth of employee:"+net);
 		
 	}
 }
+
 
 package abstraction;
 
