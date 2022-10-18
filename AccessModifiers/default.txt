@@ -1,0 +1,43 @@
+//Accsess modifiers for Defult
+
+package accessModifier;
+
+class Default
+{
+	
+		void print() 
+		{
+			System.out.println("Hello");
+		}
+
+}
+//within same package
+package accessModifier;
+
+public class Dclass 
+{
+
+	public static void main(String[] args) 
+	{
+		Default d=new Default();
+		d.print();				//access in within the same package
+
+	}
+
+}
+
+//outside package
+//gives error
+package access;
+
+import accessModifier.Default;		//Not accessible in Outside the package 
+
+ class Defaulta
+{
+	public static void main(String[] args) 
+	{
+		Default d=new Default();
+		d.print();				
+
+	}
+}
