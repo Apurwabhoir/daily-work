@@ -1,0 +1,46 @@
+//Accsess modifiers for public
+
+package accessModifier;
+
+public class Public_class 
+{
+	public void Disp()
+	{
+		System.out.println("Hi from Public_class");
+	}
+}
+
+
+//within same package
+
+package accessModifier;
+
+public class Pclass 
+{
+
+	public static void main(String[] args)
+	{
+		Public_class ob=new Public_class(); 	//accessible in within same package
+		ob.Disp();
+
+	}
+
+}
+
+
+//outside package
+
+package access;
+
+import accessModifier.Public_class;
+
+public class Public_access {
+
+	public static void main(String[] args)
+	{
+		Public_class ob=new Public_class();			//accessible in Outside package
+		ob.Disp();
+	}
+
+}
+
