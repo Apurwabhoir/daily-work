@@ -25,9 +25,29 @@ public class private_access
 	public static void main(String[] args)
 	{
 		Private_class p=new Private_class();
-		p.access();											                  //not accessible in within same package
-		System.out.println(((Private_class) p).getA());		//private variable accessible  by get method
+		p.access();					         //not accessible in within same package
+		System.out.println(((Private_class) p).getA());		//private variable a access by get method within same package
+	}
 
 	}
 
 }
+
+//within outside package gives error
+package access;
+
+import accessModifier.Private_class;
+
+public class privateC {
+
+	public static void main(String[] args) 
+	{
+		Private_class p=new Private_class();
+		p.access();						//method access is not accessible in within Outside package
+		System.out.println(((Private_class) p).getA());		//private variable a access by get method within outside package
+
+
+	}
+
+}
+
