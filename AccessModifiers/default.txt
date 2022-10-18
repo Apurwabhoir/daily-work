@@ -4,11 +4,21 @@ package accessModifier;
 
 class Default
 {
+	void print() 
+	{
+		System.out.println("Hello");
+	}
 	
-		void print() 
-		{
-			System.out.println("Hello");
-		}
+	void add()
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter numbers");
+		int num1=sc.nextInt();
+		int num2=sc.nextInt();
+		int ans= num1+num2;
+		System.out.println("Addition:"+ans);
+		
+	}
 
 }
 //within same package
@@ -21,7 +31,7 @@ public class Dclass
 	{
 		Default d=new Default();
 		d.print();				//access in within the same package
-
+		d.add();
 	}
 
 }
@@ -38,6 +48,6 @@ import accessModifier.Default;		//Not accessible in Outside the package
 	{
 		Default d=new Default();
 		d.print();				
-
+		d.add();
 	}
 }
