@@ -8,6 +8,16 @@ public class Public_class
 	{
 		System.out.println("Hi from Public_class");
 	}
+	public void add()
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter numbers");
+		int num1=sc.nextInt();
+		int num2=sc.nextInt();
+		int ans= num1+num2;
+		System.out.println("Addition:"+ans);
+			
+	}
 }
 
 
@@ -20,11 +30,12 @@ public class Pclass
 
 	public static void main(String[] args)
 	{
+		System.out.println("Hi from within same package");
 		Public_class ob=new Public_class(); 	//accessible in within same package
 		ob.Disp();
-
+		ob.add();
 	}
-
+	
 }
 
 
@@ -38,8 +49,10 @@ public class Public_access {
 
 	public static void main(String[] args)
 	{
+		System.out.println("Hi from Outside package");
 		Public_class ob=new Public_class();			//accessible in Outside package
 		ob.Disp();
+		ob.add();
 	}
 
 }
