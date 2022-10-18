@@ -3,9 +3,19 @@ package accessModifier;
 
 public class Protected_class
 {
-	 protected void display()
+	protected void display()
 	{
 		System.out.println("Hello everyone from Protected_class");
+	}
+	protected void add()
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter numbers");
+		int num1=sc.nextInt();
+		int num2=sc.nextInt();
+		int ans= num1+num2;
+		System.out.println("Addition:"+ans);
+			
 	}
 }
 
@@ -17,9 +27,10 @@ public class Pro_access extends Protected_class
 
 	public static void main(String[] args) 
 	{
+		System.out.println("Accessible within same package");
 		Protected_class a=new Protected_class();	//accessible in within same package by using child class
 		a.display();
-
+		a.add();
 	}
 
 }
@@ -34,8 +45,10 @@ public class Protec extends Protected_class
 
 	public static void main(String[] args)
 	{
+		System.out.println("Accessible within Outside package");
 		Protec a=new Protec();				//accessible in Outside package
 		a.display();
+		a.add();
 
 	}
 
