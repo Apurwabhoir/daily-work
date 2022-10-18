@@ -1,0 +1,42 @@
+//protected
+package accessModifier;
+
+public class Protected_class
+{
+	 protected void display()
+	{
+		System.out.println("Hello everyone from Protected_class");
+	}
+}
+
+//within same class
+package accessModifier;
+
+public class Pro_access extends Protected_class
+{
+
+	public static void main(String[] args) 
+	{
+		Protected_class a=new Protected_class();	//accessible in within same package by using child class
+		a.display();
+
+	}
+
+}
+
+//outside package
+package access;
+
+import accessModifier.Protected_class;
+
+public class Protec extends Protected_class
+{
+
+	public static void main(String[] args)
+	{
+		Protec a=new Protec();				//accessible in Outside package
+		a.display();
+
+	}
+
+}
