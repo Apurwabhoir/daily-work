@@ -1,0 +1,33 @@
+//private access modifier
+package accessModifier;
+
+public class Private_class
+{
+	private int a=10;
+	private void access()
+	{
+		System.out.println("Hello private_class ");
+	}
+	public int getA() {
+		return a;
+	}
+	public void setA(int a) {
+		this.a = a;
+	}
+	
+}
+//within same package gives error
+package accessModifier;
+
+public class private_access
+{
+
+	public static void main(String[] args)
+	{
+		Private_class p=new Private_class();
+		p.access();											                  //not accessible in within same package
+		System.out.println(((Private_class) p).getA());		//private variable accessible  by get method
+
+	}
+
+}
