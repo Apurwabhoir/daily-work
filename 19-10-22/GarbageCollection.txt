@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Gcollection 
+{
+
+	public static void main(String[] args) 
+	{
+		Gcollection ob=new Gcollection();
+		ob.greaterNo();
+		System.gc();
+	}
+	
+	public void greaterNo()
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the two value");
+		int num=sc.nextInt();
+		int num1=sc.nextInt();
+   
+         	if(num > num1)
+         	{
+         		System.out.println("Greater Number is : " + num);
+         	}
+         	else
+         	System.out.println("Gargest Number is : " + num1);
+	}
+	
+}
