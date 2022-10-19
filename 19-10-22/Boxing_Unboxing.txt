@@ -55,11 +55,19 @@ public class Boxing
 		if (num % 2 == 0) 
 		{
 			 System.out.println("Entered Number is Even");
-        }
-        else 
-        {
-        	System.out.println("Entered Number is Odd");
-        }
+        	}
+        	else 
+        	{
+        		System.out.println("Entered Number is Odd");
+        	}
+		if(num % 3 == 0) 
+		{
+	        	System.out.println("Given number is divisible by 3");
+	    	}
+		else
+		{
+	        	System.out.println("Given number is not divisible by 3");
+	    	}
 	}
 
 }
