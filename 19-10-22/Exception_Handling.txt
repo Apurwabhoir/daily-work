@@ -1,0 +1,203 @@
+/*WAP to use the try catch finally , multiple catch block and nested try and catch block by using switch case
+1.try catch 
+2:try catch finally
+3:nested try catch
+4:multiple catch block 
+perform the following operations
+1. arithmetic operation
+2. accept the size and than accept no arr[size+1]=45;
+3: arithmetic, array, accept name from user than display the name, assign null value to name. display the hash code
+4. Same as 3rd */
+
+package exceptionHandling;
+
+import java.util.Scanner;
+
+public class Exception_handling 
+{
+
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		char ans;
+		int ch,num1,num2,size,i;
+		do
+		{
+			System.out.println("choose:\n1:try catch \n2:try catch finally \n3:nested try catch \n4:multiple catch block");
+			ch=sc.nextInt();
+			 
+			switch(ch)
+			{
+			 case 1:
+				 System.out.println("  Try catch   ");
+				 try
+				 {	
+					 System.out.println("Enter two numbers:");
+					 num1=sc.nextInt();
+					 num2=sc.nextInt();
+					 System.out.println("Addition of two numbers is"+(num1+num2));
+					 System.out.println("Substraction of two numbers is"+(num1-num2));
+					 System.out.println("Multiplication of two numbers is"+(num1*num2));
+					 System.out.println("Division  of two numbers is"+(num1/num2));
+				 }
+				 catch(Exception e)
+				 {
+					 System.out.println("The second number cannot be zero");
+				 }
+				 break;
+				 
+			 case 2:
+				System.out.println("  Try catch finally  ");
+				try
+				{
+					 System.out.println("Enter the size of array ");
+					 size=sc.nextInt();
+					 
+					 int arr[]=new int[size];
+					 arr[size+1]=5;					//if we comment this variable declaration then the output is visible
+					 System.out.println("Enter " +size+ " Number:");
+					 for(i=0;i<size;i++)
+					 {
+						arr[i]=sc.nextInt();
+					 }
+					 System.out.println("The Number is ");			//for printing the array number
+					 for(i=0;i<size;i++)
+					 {
+						 System.out.println(arr[i]);
+					 }	 
+				}
+				catch(ArrayIndexOutOfBoundsException e)
+				{
+					 System.out.println("The array is greater than its declared size ");
+				}
+				finally
+				{
+					System.out.println("This is finally block");
+				}
+				
+				break;
+			
+			 case 3:
+				 System.out.println("  Nested try catch  ");
+				 try
+				 {	
+					 System.out.println("Enter two numbers:");
+					 num1=sc.nextInt();
+					 num2=sc.nextInt();
+					 System.out.println("Addition of two numbers is"+(num1+num2));
+					 System.out.println("Substraction of two numbers is"+(num1-num2));
+					 System.out.println("Multiplication of two numbers is"+(num1*num2));
+					 System.out.println("Division  of two numbers is"+(num1/num2));
+				 
+				 try
+				 {
+					 System.out.println("Enter the size of array ");
+					 size=sc.nextInt();
+						 
+					 int arr[]=new int[size];
+					 //arr[size+1]=0;					
+					 System.out.println("Enter " +size+ " Number:");
+					 for(i=0;i<size;i++)
+					 {
+						arr[i]=sc.nextInt();
+					 }
+					 System.out.println("The Number is ");		
+					 for(i=0;i<size;i++)
+					 {
+						 System.out.println(arr[i]);
+					 }
+				 }
+				 catch(ArrayIndexOutOfBoundsException e)
+				 {
+					 System.out.println("The array is greater than its declared size ");
+				 }
+				 try
+				 {
+					String name;
+					System.out.println("Enter the name:");
+					name=sc.next();
+					System.out.println("The Name is: " +name+ " = " +name.hashCode());
+				 }
+				 catch(NullPointerException n)
+				 {
+					 System.out.println("The name cannot be null");
+				 }
+				 }
+				 catch(Exception e)
+				 {
+					 System.out.println("The second number cannot be zero");
+				 }
+				 finally
+				 {
+					 System.out.println("This is finally block");
+				 }				 
+				 break;
+				 
+			 case 4:
+				 System.out.println("  Multiple catch block   ");
+				 try
+				 {
+					 System.out.println("Enter two numbers:");
+					 num1=sc.nextInt();
+					 num2=sc.nextInt();
+					 System.out.println("Addition of two numbers is"+(num1+num2));
+					 System.out.println("Substraction of two numbers is"+(num1-num2));
+					 System.out.println("Multiplication of two numbers is"+(num1*num2));
+					 System.out.println("Division  of two numbers is"+(num1/num2));
+					 
+					 
+					 String name;
+					 
+					 System.out.println("Enter the name:");
+					 name=sc.next();
+					 System.out.println("the name is="+name.hashCode());
+						
+						
+					 System.out.println("Enter the size of array ");
+					 size=sc.nextInt();
+						 
+					 int arr[]=new int[size];
+					 arr[size]=5;
+					 System.out.println("Enter " +size+ " Number:");
+					 for(i=0;i<size;i++)
+					 {
+						arr[i]=sc.nextInt();
+					 }
+					 System.out.println("The Number is ");
+					 for(i=0;i<size;i++)
+					 {
+						 System.out.println(arr[i]);
+					 }
+					 
+				 }
+				 
+				 catch(ArrayIndexOutOfBoundsException e)
+				 {
+					 System.out.println("The array is greater than its declared size ");
+				 }
+				 catch(NullPointerException n)
+				 {
+					 System.out.println("The name cannot be null");
+				 }
+				 catch(Exception e)
+				 {
+					 System.out.println("The second number cannot be zero");
+				 }
+				 finally
+				 {
+					 System.out.println("This is finally block");
+				 }			 
+				 break;
+
+				 default:
+						System.out.println("Invalid choice");
+			}
+			System.out.println("Do you want to continue y/n");
+			ans=sc.next().charAt(0);
+		}
+		while(ans=='Y'||ans=='y');
+		System.out.println("Thank you");
+
+	}
+
+}
