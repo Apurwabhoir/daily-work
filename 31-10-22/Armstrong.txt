@@ -1,0 +1,86 @@
+//Interface: Display Armstrong no from1 to 1000 , Prime NO from 1 to 100
+package multi_threads;
+
+public interface Armstrong 
+{
+	public void run();
+}
+
+
+package multi_threads;
+public class Armst_no implements Armstrong,Runnable
+{
+	@Override
+	public void run()
+	{
+		int num, count = 0,r,temp = 0;
+        System.out.print("\nArmstrong numbers from 1 to 1000:");
+        for(int i=1;i<=1000;i++)
+        {
+            num=i;
+            while(num>0)
+            {
+                r=num%10;
+                temp=temp+(r*r*r);
+                num=num/10;
+            }
+            if(temp==i)
+            {
+            	System.out.print("\nArmstrong numbers are:");
+                System.out.print(i+" ");
+            }
+            temp = 0;
+        }
+		
+	}
+
+}
+
+
+package multi_threads;
+
+import java.util.Scanner;
+
+public  class PrimeNum implements Runnable
+{
+
+	public static void main(String[] args) 
+	{
+		PrimeNum obj=new PrimeNum();
+		Armst_no obj1=new Armst_no();
+		Thread t=new Thread(obj);
+		t.start();
+		Thread t1=new Thread(obj1);
+		t1.start();
+
+	}
+
+	@Override
+	public void run() 
+	{
+		int i =0;
+	       int num =0;
+	       String  primeNum = "";
+
+	       for (i = 1; i <= 100; i++)         
+	       { 		  	  
+	          int counter=0; 	  
+	          for(num =i; num>=1; num--)
+		  {
+	             if(i%num==0)
+		     {
+	 		counter = counter + 1;
+		     }
+		  }
+		  if (counter ==2)
+		  {
+		     primeNum = primeNum + i + " ";
+		  }	
+	       }	
+	       System.out.println("\nPrime numbers from 1 to 100 are :");
+	       System.out.println(primeNum);
+		}
+
+}
+
+
