@@ -1,14 +1,7 @@
 //Interface: Display Armstrong no from1 to 1000 , Prime NO from 1 to 100
-package multi_threads;
-
-public interface Armstrong 
-{
-	public void run();
-}
-
 
 package multi_threads;
-public class Armst_no implements Armstrong,Runnable
+public class Armst_no implements Runnable
 {
 	@Override
 	public void run()
