@@ -1,0 +1,33 @@
+//Thread Class: Display Fibonacci series
+package multi_threads;
+
+import java.util.Scanner;
+
+public class Fibonacci extends Thread
+{
+
+	public static void main(String[] args) 
+	{
+		Fibonacci ob=new Fibonacci();
+		ob.start();
+		Fibonacci obj=new Fibonacci();
+		obj.start();
+	}
+	
+	public void run() 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("\nEnter The Number ");
+		int num,fdg,sdg = 0,res = 1;
+		num = sc.nextInt();
+		for(int i = 1; i <= num; i++)							
+        {
+            fdg = sdg;								
+            sdg = res;
+            res = fdg + sdg;
+            System.out.print(fdg+" \t\n ");         
+        
+        }
+	}
+	
+}
