@@ -1,0 +1,61 @@
+package synchronization;
+
+public class Cal
+{
+	 private int bal=5000;
+		private int amt;
+		
+	synchronized void cal(int amount)
+	{  
+		amt=amount;
+		bal=bal-amt;
+		System.out.println("The amount is="+bal);
+		System.out.println("Acount balance has been updated.");
+		
+	}
+} 
+
+
+package synchronization;
+
+public class Mythread1 extends Thread{  
+	Cal t;  
+	Mythread1(Cal t)
+	{  
+	this.t=t;  
+	}  
+	public void run(){  
+		t.cal(1000); 
+	}
+}
+
+
+package synchronization;
+
+public class Mythread2 extends Thread{  
+	Cal t;  
+	Mythread2(Cal t)
+	{  
+	this.t=t;  
+	}  
+	public void run(){  
+		t.cal(2000); 
+	}
+}
+
+package synchronization;
+
+public class TestSynchro {
+
+	public static void main(String[] args) {
+	
+		Cal c=new Cal();
+		Mythread1 t1=new Mythread1(c);  
+		Mythread2 t2=new Mythread2(c);  
+		Mythread2 t3=new Mythread2(c);  
+		t1.start();  
+		t2.start(); 
+		t3.start(); 
+	}
+
+}
