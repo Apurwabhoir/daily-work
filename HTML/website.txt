@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		body
+		{
+				background-image: "C:\Users\Dell\Pictures\wallpaper"('8.jpg');
+				background-repeat: no-repeat;
+				background-attachment: fixed;  
+				background-size: cover;
+		}
+		</style>	
+		
+	
+	
+		
+	</head>
+	
+	<body>
+		
+		<br>
+		<b><i><h5 style="text-align:center;"> IN NATURE, NOTHING IS PERFECT </h5></i></b>
+		<b><i><h1 style="text-align:center;"> and everything is perefct </h1></i></b><br>
+		
+		<b><h1 style="text-align:center;","font-size:1000%;"> WELCOME TO TOURS & TRAVEL </h1></b><br>
+		
+			<body background = "C:\Users\Dell\Pictures\wallpaper\8.jpg">
+	</body>
+	
+</html>
