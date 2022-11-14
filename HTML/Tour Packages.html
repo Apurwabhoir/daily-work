@@ -1,69 +1,185 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Services</title>
-<style>
-
-		table 
-		{
-			font-family: arial, sans-serif;
-			border-collapse: collapse;
-			width: 100%;
-		}
-
-		td, th {
-		border: 1px solid #dddddd;
-		text-align: left;
-		padding: 8px;
-		}
-tr:hover {background-color: #D6EEEE;}
-
-</style>
-	<style>
+		<style>
 		body
 		{
-				background-image: "C:\Users\Dell\Pictures\wallpaper"('backpack.jpg');
+				background-image: "C:\Users\Dell\Pictures\wallpaper"('8.jpg');
 				background-repeat: no-repeat;
 				background-attachment: fixed;  
 				background-size: cover;
 		}
 		</style>	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
 
-		
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+        }
+
+        .TOURPACKAGES-section {
+            padding: 15px;
+            text-align: center;
+            background-image: linear-gradient(to bottom right,MediumSeaGreen);
+            color: white;
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: grey;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #000;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+    </style>
 </head>
-<body>
-	<body background = "C:\Users\Dell\Pictures\wallpaper\backpack.jpg">
-	
-	<table border="">
-	
-	<tr style="height:100px">
-		<td style="text-align:center;" colspan="4"><strong> TOUR PACKAGES </strong></td>
-		
-	</tr>
-	<tr style="height:100px">
-	
-		<td style="text-align:center;"><strong>PASSPORT VISA</strong></td>
-		<td style="text-align:center;"><strong>FLIGHTS</strong></td>
-		<td style="text-align:center;"><strong>HOTELS</strong></td>
-		
-	</tr>
-	
-	<tr style="height:100px">
-		<td style="text-align:center;"><strong>TRANSFERS</strong></td>
-		<td style="text-align:center;"><strong>ACTIVITIES</strong></td>
-		<td style="text-align:center;"><strong>HIKKING</strong></td>
-		
-		
-	</tr>
-	<tr style="height:100px">
-		<td style="text-align:center;"><strong>ATTRACTIONS</strong></td>
-		<td style="text-align:center;"><strong>ADVENTURE</strong></td>
-		<td style="text-align:center;"><strong>CLIMBING</strong></td>
-		
-	</tr>
-	</tr>
-</table>
 
+<body>
+	<body background = "C:\Users\Dell\Pictures\wallpaper\8.jpg">
+    <div class="TOURPACKAGES-section">
+        <h1>TOUR PACKAGES</h1>
+    </div>
+
+
+    
+	<div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="C:\Users\Dell\Pictures\wallpaper\f1.png" style="width:100%">
+                <div class="container">
+                    <h2>FLIGHTS</h2>
+                </div>
+            </div>
+        </div>
+	
+        <div class="column">
+            <div class="card">
+                <img src="C:\Users\Dell\Pictures\wallpaper\h2.png" style="width:100%">
+                <div class="container">
+                    <h2>HOTELS</h2>
+                </div>
+            </div>
+        </div>
+	
+        <div class="column">
+            <div class="card">
+                <img src="C:\Users\Dell\Pictures\wallpaper\t2.png" style="width:100%">
+                <div class="container">
+                    <h2>TRANSFERS</h2>
+                </div>
+            </div>
+        </div>
+	</div>
+	<div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="C:\Users\Dell\Pictures\wallpaper\ac.png" style="width:100%">
+                <div class="container">
+                    <h2>ACTIVITIES</h2>
+                </div>
+            </div>
+        </div>
+	
+        <div class="column">
+            <div class="card">
+                <img src="C:\Users\Dell\Pictures\wallpaper\hi.png" style="width:100%">
+                <div class="container">
+                    <h2>HIKKING</h2>
+                </div>
+            </div>
+        </div>
+	
+        <div class="column">
+            <div class="card">
+                <img src="C:\Users\Dell\Pictures\wallpaper\at.png" style="width:100%">
+                <div class="container">
+                    <h2>ATTRACTIONS</h2>
+                </div>
+            </div>
+        </div>
+	</div>	
+	<div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="C:\Users\Dell\Pictures\wallpaper\ad.png" style="width:100%">
+                <div class="container">
+                    <h2>ADVENTURE</h2>
+                </div>
+            </div>
+        </div>
+	
+        <div class="column">
+            <div class="card">
+                <img src="C:\Users\Dell\Pictures\wallpaper\cl.png" style="width:100%">
+                <div class="container">
+                    <h2>CLIMBING</h2>
+                </div>
+			</div>
+		</div>
+		
+		<div class="column">
+            <div class="card">
+                <img src="C:\Users\Dell\Pictures\wallpaper\cy.png" style="width:100%">
+                <div class="container">
+                    <h2>CYCLING</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+    
+		<p><button class="button">Book Now</button></p>
 </body>
 </html>
