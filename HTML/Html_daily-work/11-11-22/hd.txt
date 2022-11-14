@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3 style="text-align:center;"><a href="Red.html" target="ab">Red</a></h3>
+	<h3 style="text-align:center;"><a href="Green.html" target="ab">Green</a></h3>
+	<h3 style="text-align:center;"><a href="Pink.html" target="ab">Pink</a></h3>
+	<h3 style="text-align:center;"><a href="Purple.html" target="ab">Purple</a></h3>
+	<h3 style="text-align:center;"><a href="Blue.html" target="ab">Blue</a></h3>
+	<h3 style="text-align:center;"><a href="Yellow.html" target="ab">Yellow</a></h3>
+</body>
+</html>
