@@ -1,0 +1,158 @@
+package sql;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
+
+
+public class sql1
+{
+
+	public static void main(String[] args)
+	{
+		sql1 s= new sql1();
+		s.select();
+		s.insert();
+		s.update();
+		s.del_data();
+		
+	}
+		
+		public void select()
+		{
+			try 
+			{
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/Assignment","root", "root");
+				Statement st=con.createStatement();
+				ResultSet rs=st.executeQuery("select * from Employee");
+				
+				while(rs.next())
+				{
+					System.out.println(rs.getString(1)+"\t"+rs.getString(2)+"\t"+rs.getString(3));
+				}
+				
+				con.close();
+			}
+			catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		public void insert()
+		{
+			try 
+			{
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/Assignment","root", "root");
+				
+				/* String query="insert into Employee (emp_id,f_name,dep) values(5,'urvi','civil')";
+				Statement st=con.createStatement();
+				int count =st.executeUpdate(query);
+				*/
+				
+				String query="insert into Employee (emp_id,f_name,dep) values(?,?,?)";
+				PreparedStatement st=con.prepareStatement(query);
+				Scanner sc=new Scanner(System.in);
+				String emp_id,f_name,dep;
+				System.out.println("Entre your employee id");
+				emp_id=sc.next();
+				System.out.println("Enter your employee name");
+				f_name=sc.next();
+				System.out.println("Enter your department");
+				dep=sc.next();
+				st.setString(1, emp_id);
+				st.setString(2, f_name);
+				st.setString(3, dep);
+				int count=st.executeUpdate();
+				
+				if(count>0)
+				{
+					System.out.println("Data inserted");
+				}
+				else
+				{
+					System.out.println("Error in the Query :(");
+				}
+				con.close();
+			}
+			catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		public void update()
+		{
+			try 
+			{
+				String Que="update employee set dep=? where emp_id=?";
+			
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/Assignment","root", "root");
+				PreparedStatement st=con.prepareStatement(Que);
+				String dep,emp_id;
+				Scanner sc=new Scanner(System.in);
+				System.out.println("Enter the employee id to change the department");
+				emp_id=sc.next();
+				System.out.println("Enter new department");
+				dep=sc.next();
+				st.setString(2, emp_id);
+				st.setString(1, dep);
+				
+				int count=st.executeUpdate();
+				
+				if(count>0)
+				{
+					System.out.println("The data has been updated .");
+				}
+				
+				con.close();
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
+		public void del_data()
+		{
+			try 
+			{
+				String Que="delete from employee where emp_id=?";
+			
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/Assignment","root", "root");
+
+				PreparedStatement st=con.prepareStatement(Que);
+				String emp_id;
+				Scanner sc=new Scanner(System.in);
+				System.out.println("Enter th employee id to delete the data .");
+				emp_id=sc.next();
+				
+				
+				st.setString(1, emp_id);
+				
+				int count=st.executeUpdate();
+				
+				if(count>0)
+				{
+					System.out.println("The data has been deleted .");
+				}
+				
+				con.close();
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	
+		
+
+}
