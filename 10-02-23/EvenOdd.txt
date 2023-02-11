@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>My page</title>
+		<script>
+			function demo()
+			{
+				var number=parseInt(document.getElementById("num").value);
+				 
+				if(number%2==0)
+					document.getElementById("res").innerHTML = "Even";
+					
+				else
+					document.getElementById("res").innerHTML = "Odd";
+					
+				
+				document.getElementById("ans").innerHTML=res;
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1>The process of addition of two Numbers </h1>
+		<form>
+		<label>Enter your Number </label>
+			<input type="text" id="num" />
+			
+			<input type="button" onclick="demo()" value="Check even & odd" />
+		
+		<p>Result is =<span id="res"> ?</span></p>
+		
+		</form>
+	</body>
+	
+</html>
